@@ -46,13 +46,13 @@ module.exports = [
     price: 12900,
     currency: "USD",
     image:
-      "https://res.cloudinary.com/dqntawt3s/image/upload/v1690979054/od7lbrq1e2chqqwzyd5a.jpg",
+      "https://res.cloudinary.com/dqntawt3s/image/upload/v1690979054/xsdjsrxcxuspvoca2hrd.jpg",
   },
   {
     name: "Perfume",
     price: 8500,
     currency: "USD",
     image:
-      "https://res.cloudinary.com/dqntawt3s/image/upload/v1690979054/od7lbrq1e2chqqwzyd5a.jpg",
+      "https://res.cloudinary.com/dqntawt3s/image/upload/v1690979054/g1rdbakxzye29jpaelq5.jpg",
   },
 ];
