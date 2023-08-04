@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import useSWR from "swr";
 import { useShoppingCart } from "use-shopping-cart";
 import axios from "axios";
+import { CheckCircleIcon } from "@heroicons/react/24/outline";
 
 export default function SuccessPage() {
   const router = useRouter();
