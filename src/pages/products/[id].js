@@ -4,6 +4,7 @@ import { CheckIcon } from "@heroicons/react/24/solid";
 import { useState } from "react";
 import { toast } from "react-hot-toast";
 import { formatCurrencyString, useShoppingCart } from "use-shopping-cart";
+import Image from "next/image";
 
 export default function ProductPage({ product }) {
   const [count, setCount] = useState(1);

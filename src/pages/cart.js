@@ -14,7 +14,7 @@ export default function CartPage() {
   } = useShoppingCart();
   const [isRedirecting, setRedirecting] = useState(false);
 
-  async function onCheckOut() {
+  async function onCheckout() {
     if (cartCount > 0) {
       try {
         setRedirecting(true);
@@ -35,7 +35,7 @@ export default function CartPage() {
 
   return (
     <div className="container xl:max-w-screen-xl mx-auto py-12 px-6">
-      {!cartCount > 0 ? (
+      {cartCount > 0 ? (
         <>
           <h2 className="text-4xl font-semibold">Your Shopping cart</h2>
           <p className="mt-1 text-xl">
@@ -73,7 +73,7 @@ export default function CartPage() {
             </p>
             <button
               disabled={isRedirecting}
-              onClick={onCheckOut}
+              onClick={onCheckout}
               className="border rounded py-2 px-6 bg-yellow-500 hover:bg-yellow-600 border-yellow-500 hover:border-yellow-600 focus:ring-4 focus:ring-opacity-50 focus:ring-yellow-500 text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-yellow-500 mt-4 max-w-max"
             >
               {isRedirecting ? "Redirecting..." : "Go to Checkout"}

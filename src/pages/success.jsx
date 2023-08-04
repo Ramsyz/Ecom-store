@@ -1,23 +1,23 @@
-import { CheckCircleIcon } from "@heroicons/react/24/solid";
 import { useRouter } from "next/router";
 import useSWR from "swr";
 import { useShoppingCart } from "use-shopping-cart";
+import axios from "axios";
 
-export default function successPage() {
+export default function SuccessPage() {
   const router = useRouter();
- const {clearCart}=  useShoppingCart
+  const { clearCart } = useShoppingCart;
   const sessionId = router.query.session_id;
   const { data, error } = useSWR(
     () => (sessionId ? `/api/checkout-sessions/${sessionId}` : null),
     (url) => axios.get(url).then((res) => res.data),
     {
-      onSuccess(){
-        clearCart()
-      }
+      onSuccess() {
+        clearCart();
+      },
     }
   );
-
   const email = data?.customer_details?.email;
+
   return (
     <div className="container xl:max-w-screen-xl mx-auto py-12 px-6">
       {error ? (

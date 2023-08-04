@@ -1,10 +1,14 @@
-import { MinusSmallIcon, PlusSmallIcon } from "@heroicons/react/24/outline";
-import { XCircleIcon, XMarkIcon } from "@heroicons/react/24/solid";
+import {
+  MinusSmallIcon,
+  PlusSmallIcon,
+  XCircleIcon,
+  XMarkIcon,
+} from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
 import { useShoppingCart } from "use-shopping-cart";
 
-export default function CartProduct() {
+export default function CartProduct({ product }) {
   const { setItemQuantity, removeItem } = useShoppingCart();
 
   return (
@@ -34,7 +38,7 @@ export default function CartProduct() {
           >
             <MinusSmallIcon className="w-6 h-6 flex-shrink-0" />
           </button>
-          <p className="font-semibold text-xl">{count}</p>
+          <p className="font-semibold text-xl">{product.quantity}</p>
           <button
             onClick={() => setItemQuantity(product.id, product.quantity + 1)}
             className="p-1 rounded-md hover:bg-green-100 hover:text-green-500"
